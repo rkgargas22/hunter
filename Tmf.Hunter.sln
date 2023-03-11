@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tmf.Hunter.Core", "Tmf.Hunt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tmf.Hunter.Manager", "Tmf.Hunter.Manager\Tmf.Hunter.Manager.csproj", "{B3C8668D-1CEA-47D5-89AC-41157E02D659}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tmf.Hunter.Infrastructure", "Tmf.Hunter.Infrastructure\Tmf.Hunter.Infrastructure.csproj", "{B5C24ADE-AEF6-43CF-8EB3-4A849CEBBF64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tmf.Logs", "tmf.Logs\Tmf.Logs.csproj", "{090866C2-7AC2-4E69-88B2-93CCDFADF9F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{B3C8668D-1CEA-47D5-89AC-41157E02D659}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3C8668D-1CEA-47D5-89AC-41157E02D659}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3C8668D-1CEA-47D5-89AC-41157E02D659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C24ADE-AEF6-43CF-8EB3-4A849CEBBF64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C24ADE-AEF6-43CF-8EB3-4A849CEBBF64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C24ADE-AEF6-43CF-8EB3-4A849CEBBF64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C24ADE-AEF6-43CF-8EB3-4A849CEBBF64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090866C2-7AC2-4E69-88B2-93CCDFADF9F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090866C2-7AC2-4E69-88B2-93CCDFADF9F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090866C2-7AC2-4E69-88B2-93CCDFADF9F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090866C2-7AC2-4E69-88B2-93CCDFADF9F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿namespace Tmf.Hunter.Core
+﻿namespace tmf.Logs
 {
     public class Class1
     {

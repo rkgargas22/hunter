@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tmf.Hunter.Core\Tmf.Hunter.Core.csproj" />
+    <ProjectReference Include="..\Tmf.Hunter.Manager\Tmf.Hunter.Manager.csproj" />
+    <ProjectReference Include="..\tmf.Logs\Tmf.Logs.csproj" />
   </ItemGroup>
 
 </Project>
