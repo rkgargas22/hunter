@@ -163,10 +163,6 @@ namespace Tmf.Hunter.Core.RequestModels
         public string Type { get; set; }
     }
 
-
-
-
-
     public class Address
     {
         [JsonPropertyName("addressType")]
