@@ -23,21 +23,21 @@ namespace Tmf.Hunter.Infrastructure.Services
             _options = options.Value;
             this._configurationManager = newConfigurationManager;
         }
-        public async Task<TaskDetailResponse> ValidateCustomer(ValidateCustomerRequest validateCustomerRequest)
+        public async Task<ValidateCustomerResponse> ValidateCustomer(ValidateCustomerRequest validateCustomerRequest)
         {
             HunterAuthTokenResponse hunterAuthTokenResponse = await HunterAuthToken();
             var accessToken = hunterAuthTokenResponse.access_token;
             if (!string.IsNullOrEmpty(accessToken))
             {
-                var result = await _httpServices.PostAsync(_options.Url.HunterApplication, validateCustomerRequest);
+                var result = await _httpServices.PostAsync(_options.Url.HunterApplication, accessToken, validateCustomerRequest);
                 if (result == null)
                 {
-                    return new TaskDetailResponse();
+                    return new ValidateCustomerResponse();
                 }
 
                 var jsonSerializerOptions = new JsonSerializerOptions() { WriteIndented = true };
 
-                return JsonSerializer.Deserialize<TaskDetailResponse>(result, jsonSerializerOptions);
+                return JsonSerializer.Deserialize<ValidateCustomerResponse>(result, jsonSerializerOptions);
             }
             else
             {

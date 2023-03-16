@@ -13,9 +13,11 @@ namespace Tmf.Hunter.Manager.Services
             _hunterRepository = hunterRepository;
         }
             
-        public async Task<TaskDetailResponse> ValidateCustomer(ValidateCustomerRequest validateCustomerRequest)
-        {
-            return await _hunterRepository.ValidateCustomer(validateCustomerRequest);
+        public async Task<ValidateCustomerResponse> ValidateCustomer(ValidateCustomerRequest validateCustomerRequest)
+        {           
+            ValidateCustomerResponse customerResponse = await _hunterRepository.ValidateCustomer(validateCustomerRequest);
+            return customerResponse;
+           
         }
 
     }

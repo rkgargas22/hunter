@@ -9,12 +9,12 @@ using Tmf.Hunter.Infrastructure.Interfaces;
 using Tmf.Hunter.Infrastructure.Services;
 using Tmf.Hunter.Manager.Interfaces;
 using Tmf.Hunter.Manager.Services;
-//namespace Tmf.Hunter.Api
-//{
-    //public class Program
-    //{
-    //    public static void Main(string[] args)
-    //    {
+namespace Tmf.Hunter.Api
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -35,8 +35,8 @@ using Tmf.Hunter.Manager.Services;
 
             builder.Services.AddScoped<IHunterManager, HunterManager>();
             builder.Services.AddScoped<IValidator<ValidateCustomerRequest>, ValidationCustomerValidator>();
-            builder.Services.AddScoped<IValidator<contacts>, ContactsValidator>();
-            builder.Services.AddScoped<IValidator<identityDocuments>, IdentityDocumentsValidator>();
+            builder.Services.AddScoped<IValidator<Header>, ContactsValidator>();
+            //builder.Services.AddScoped<IValidator<identityDocuments>, IdentityDocumentsValidator>();
 
             builder.Services.AddScoped<IValidator<TaskDetailRequest>, TaskDetailValidator>();
 
@@ -61,6 +61,6 @@ using Tmf.Hunter.Manager.Services;
             app.MapControllers();
 
             app.Run();
-    //    }
-    //}
-//}
+        }
+    }
+}

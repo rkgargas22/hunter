@@ -29,6 +29,7 @@ namespace Tmf.Hunter.Api.Controllers
         [ProducesResponseType(typeof(ValidateCustomerResponse), StatusCodes.Status200OK)]
         public async Task<IActionResult> ValidateCustomer([FromHeader(Name = "BpNo")] string BpNo, [FromHeader(Name = "UserType")] string UserType, [FromBody] ValidateCustomerRequest validateCustomerRequest)
         {
+           
             ValidationResult result = await _validateCustomeValidator.ValidateAsync(validateCustomerRequest);
 
             if (!result.IsValid)
@@ -37,11 +38,12 @@ namespace Tmf.Hunter.Api.Controllers
             }
             var data = await _hunterManager.ValidateCustomer(validateCustomerRequest);
 
-            if (data != null && string.IsNullOrEmpty(data.RequestId))
+            //if (data != null && string.IsNullOrEmpty(data.RequestId))
+            if (data == null)
             {
                 return BadRequest(new ErrorResponse { Message = ValidationMessages.ErrorInRequest, Error = data });
             }
-            return CreatedAtAction(nameof(ValidateCustomer), new { data.RequestId }, data);
+            return CreatedAtAction(nameof(ValidateCustomer), data);
         }
     }
 }

@@ -5,6 +5,6 @@ namespace Tmf.Hunter.Manager.Interfaces
 {
     public interface IHunterManager
     {
-        Task<TaskDetailResponse> ValidateCustomer(ValidateCustomerRequest validateCustomerRequest);
+        Task<ValidateCustomerResponse> ValidateCustomer(ValidateCustomerRequest validateCustomerRequest);
     }
 }

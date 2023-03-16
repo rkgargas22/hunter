@@ -6,7 +6,7 @@ namespace Tmf.Hunter.Infrastructure.HttpServices
     {
         Task<JsonDocument> GetAsync(string uri);
 
-        Task<JsonDocument> PostAsync<TIn>(string uri, TIn model);
+        Task<JsonDocument> PostAsync<TIn>(string uri, string accessToken, TIn model);
 
         Task<JsonDocument> HunterAuthToken<TIn>(string uri, TIn model);
         

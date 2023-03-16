@@ -7,6 +7,8 @@
         public string ApiTokenKey { get; set; } = string.Empty;
         public string SecretKeyType { get; set; } = string.Empty;
         public string ApiSecretKey { get; set; } = string.Empty;
+        public string DomainId { get; set; } = string.Empty;
+        public string DomainValue { get; set; } = string.Empty;
         public UrlData Url { get; set; }
         public AuthTokenCredentialsData HunterAuthTokenCredentials { get; set; }
     }

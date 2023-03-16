@@ -47,13 +47,17 @@ namespace Tmf.Hunter.Infrastructure.HttpServices
             return await response.Content.ReadFromJsonAsync<JsonDocument>();
         }
 
-        public async Task<JsonDocument> PostAsync<TIn>(string uri, TIn model)
+        public async Task<JsonDocument> PostAsync<TIn>(string uri, string accessToken, TIn model)
         {
             var httpClient = _httpClientFactory.CreateClient();
             httpClient.DefaultRequestHeaders.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            httpClient.DefaultRequestHeaders.Add(_options.ApiTokenType, _options.ApiTokenKey);
-            httpClient.DefaultRequestHeaders.Add(_options.SecretKeyType, _options.ApiSecretKey);
+            //httpClient.DefaultRequestHeaders.Add(_options.ApiTokenType, _options.ApiTokenKey);
+            //httpClient.DefaultRequestHeaders.Add(_options.SecretKeyType, _options.ApiSecretKey);
+            httpClient.DefaultRequestHeaders.Add(_options.DomainId, _options.DomainValue);
+            httpClient.DefaultRequestHeaders.Add("X-Correlation-Id", Guid.NewGuid().ToString());
+
+            httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + accessToken);
 
             HttpResponseMessage response = await httpClient.PostAsync(uri, new StringContent(JsonSerializer.Serialize(model), UnicodeEncoding.UTF8, "application/json"));
             if (!response.IsSuccessStatusCode)

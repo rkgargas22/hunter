@@ -9,10 +9,12 @@ namespace Tmf.Hunter.Core.RequestModels
 
         [JsonPropertyName("payload")]
         public Payload Payload { get; set; }
+                
     }
 
     public class Header
     {
+       
         [JsonPropertyName("clientReferenceId")]
         public string ClientReferenceId { get; set; }
 
@@ -42,7 +44,7 @@ namespace Tmf.Hunter.Core.RequestModels
     public class Payload
     {
         [JsonPropertyName("application")]
-        public List<Application> Application { get; set; }
+        public Application Application { get; set; }
 
         [JsonPropertyName("contacts")]
         public List<Contacts> Contacts { get; set; }
@@ -107,7 +109,7 @@ namespace Tmf.Hunter.Core.RequestModels
         public List<Telephone> Telephones { get; set; }
 
         [JsonPropertyName("person")]
-        public List<Person> Person { get; set; }
+        public Person Person { get; set; }
     }
 
     public class Person
